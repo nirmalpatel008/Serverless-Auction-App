@@ -1,0 +1,31 @@
+AuctionsTable:
+  Type: AWS::DynamoDB::Table
+  Properties:
+    TableName: AuctionsTable-${self:provider.stage}
+    BillingMode: PAY_PER_REQUEST
+    AttributeDefinitions:
+      - AttributeName: id
+        AttributeType: S
+      - AttributeName: status
+        AttributeType: S
+      - AttributeName: endingAt
+        AttributeType: S
+    KeySchema:
+      - AttributeName: id
+        KeyType: HASH
+    GlobalSecondaryIndexes:
+      - IndexName: statusAndEndDate
+        KeySchema:
+          - AttributeName: status
+            KeyType: HASH
+          - AttributeName: endingAt
+            KeyType: RANGE
+        Projection:
+          ProjectionType: ALL
+# curl --location --request POST 'https://sls-test-sergio.us.auth0.com/oauth/token' \
+# --header 'Content-Type: application/x-www-form-urlencoded' \
+# --data-urlencode 'client_id=vyILZNni5L2rfRgikW3df76cpIkFXWXh' \
+# --data-urlencode 'username=nmpatel347@gmail.com' \
+# --data-urlencode 'password=Test@1234' \
+# --data-urlencode 'grant_type=password' \
+# --data-urlencode 'scope=openid'
