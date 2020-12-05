@@ -32,7 +32,7 @@ Serverless Auction App is built to have hands-on experience of Serverless Framew
     ```
 4) Deploy each microservice using this command. 
   (path must be like this ```cd/Serverless-Auction-App/Back-End Microservices/auction-service```)
-   * Deploy microservice in this order notificication-service , auth-service, aution-service. 
+   * Deploy microservice in this order notificication-service , auth-service, auction-service. 
     ```
     sls deploy -v
     ```
