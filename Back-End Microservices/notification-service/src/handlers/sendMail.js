@@ -10,7 +10,7 @@ async function sendMail(event, context) {
   const { subject, body, recipient } = email;
 
   const params = {
-    Source: 'nirmal.chhodvadiya@appgambit.com',
+    Source: 'nirmal.chhodvadiya@gmail.com',
     Destination: {
       ToAddresses: [recipient],
     },
